@@ -1,0 +1,32 @@
+[project]
+name = "zypl_interview"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "ReRubis", email = "slesarenkod@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.111.1",
+    "sqlalchemy>=2.0.31",
+    "ruff>=0.5.5",
+    "pydantic-settings>=2.3.4",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.2",
+    "pyjwt>=2.8.0",
+    "passlib>=1.7.4",
+    "greenlet>=3.0.3",
+    "psycopg2-binary>=2.9.9",
+    "aiohttp>=3.9.5",
+    "rich>=13.7.1",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true

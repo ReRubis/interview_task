@@ -1,0 +1,29 @@
+version: '3'
+services:
+  app:
+    image: ghcr.io/zypl-proj/zypl/app:latest
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - zypl
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: zypl
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - zypl
+
+
+networks:
+  zypl:
+    driver: bridge
+
